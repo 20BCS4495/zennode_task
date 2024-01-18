@@ -1,0 +1,67 @@
+def apply_discount(cart_total, cart_quantity, product_quantity):
+    discounts = [
+        ("flat_10_discount", 0.1) if cart_total > 200 else None,
+        ("bulk_5_discount", 0.05) if product_quantity > 10 else None,
+        ("bulk_10_discount", 0.1) if cart_quantity > 20 else None,
+        ("tiered_50_discount", 0.5) if cart_quantity > 30 and product_quantity > 15 else None,
+    ]
+
+    applicable_discounts = [discount for discount in discounts if discount is not None]
+
+    if applicable_discounts:
+        discount_name, discount_percentage = max(applicable_discounts, key=lambda x: x[1])
+        discount_amount = cart_total * discount_percentage
+        return discount_name, discount_amount
+    else:
+        return None, 0
+
+
+def calculate_cost(product_name, price, quantity, gift_wrap):
+    total_amount = price * quantity
+    discount_name, discount_amount = apply_discount(total_amount, quantity, quantity)
+
+    gift_wrap_fee = 1 if gift_wrap else 0
+    shipping_fee = (quantity // 10) * 5
+
+    subtotal = total_amount
+    total = subtotal - discount_amount + gift_wrap_fee + shipping_fee
+
+    return {
+        "Product Name": product_name,
+        "Quantity": quantity,
+        "Total Amount": total_amount,
+        "Subtotal": subtotal,
+        "Discount Applied": discount_name,
+        "Discount Amount": discount_amount,
+        "Gift Wrap Fee": gift_wrap_fee,
+        "Shipping Fee": shipping_fee,
+        "Total": total,
+    }
+
+
+def main():
+    products = {
+        "Product A": 20,
+        "Product B": 40,
+        "Product C": 50,
+    }
+
+    cart = {}
+
+    for product, price in products.items():
+        quantity = int(input(f"Enter the quantity of {product}: "))
+        gift_wrap = input(f"Is {product} wrapped as a gift? (yes/no): ").lower() == "yes"
+
+        cart[product] = calculate_cost(product, price, quantity, gift_wrap)
+
+    print("\n===== Order Summary =====")
+    for product, details in cart.items():
+        print("\n".join(f"{key}: {value}" for key, value in details.items()))
+        print("------------------------")
+
+    total_order_cost = sum(details["Total"] for details in cart.values())
+    print(f"\nTotal Order Cost: ${total_order_cost}")
+
+
+if __name__ == "__main__":
+    main()
