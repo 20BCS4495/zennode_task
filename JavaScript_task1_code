@@ -1,0 +1,73 @@
+function applyDiscount(cartTotal, productQuantity) {
+    const discounts = [
+        ["flat_10_discount", 0.1, total => total > 200],
+        ["bulk_5_discount", 0.05, (_, quantity) => quantity > 10],
+        ["bulk_10_discount", 0.1, (_, quantity) => quantity > 20],
+        ["tiered_50_discount", 0.5, (_, quantity) => quantity > 15],
+    ];
+
+    let appliedDiscountName = null;
+    let appliedDiscountAmount = 0;
+
+    discounts.some(([discountName, discountPercentage, condition]) => {
+        if (condition(cartTotal, productQuantity)) {
+            appliedDiscountName = discountName;
+            appliedDiscountAmount = cartTotal * discountPercentage;
+            return true; // Stop iteration
+        }
+        return false;
+    });
+
+    return { appliedDiscountName, appliedDiscountAmount };
+}
+
+function calculateOrderCost(productName, unitPrice, quantity, isGiftWrapped) {
+    const totalAmount = unitPrice * quantity;
+    const { appliedDiscountName, appliedDiscountAmount } = applyDiscount(totalAmount, quantity);
+
+    const giftWrapFee = isGiftWrapped ? 1 : 0;
+    const shippingFee = Math.ceil(quantity / 10) * 5;
+
+    const subtotal = totalAmount;
+    const total = subtotal - appliedDiscountAmount + giftWrapFee + shippingFee;
+
+    return {
+        productName,
+        quantity,
+        totalAmount,
+        subtotal,
+        appliedDiscountName,
+        appliedDiscountAmount,
+        giftWrapFee,
+        shippingFee,
+        total,
+    };
+}
+
+function main() {
+    const productsCatalog = {
+        "Product A": 20,
+        "Product B": 40,
+        "Product C": 50,
+    };
+
+    const orderCart = {};
+
+    for (const [productName, unitPrice] of Object.entries(productsCatalog)) {
+        const quantity = parseInt(prompt(`Enter the quantity of ${productName}: `), 10);
+        const isGiftWrapped = prompt(`Is ${productName} wrapped as a gift? (yes/no): `).toLowerCase() === "yes";
+
+        orderCart[productName] = calculateOrderCost(productName, unitPrice, quantity, isGiftWrapped);
+    }
+
+    console.log("\n===== Order Summary =====");
+    for (const [productName, orderDetails] of Object.entries(orderCart)) {
+        console.log(Object.entries(orderDetails).map(([key, value]) => `${key}: ${value}`).join("\n"));
+        console.log("------------------------");
+    }
+
+    const totalOrderCost = Object.values(orderCart).reduce((sum, details) => sum + details.total, 0);
+    console.log(`\nTotal Order Cost: $${totalOrderCost}`);
+}
+
+main();
