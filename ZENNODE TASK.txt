@@ -1,0 +1,31 @@
+EXPLAINATION FOR THE JAVASCRIPT CODE-
+
+1. The apply_discount function takes three parameters: cart_total (total cost of items in the cart), cart_quantity (total quantity of items in the cart), and product_quantity (quantity of a specific product).
+2. It defines a list of discount rules, each represented as a tuple with a discount name and percentage. The rules are applied conditionally based on the values of cart_total, product_quantity, and cart_quantity.
+3. The function filters out None values from the list of discounts and then selects the discount with the highest percentage (most beneficial).
+4. Returns the applied discount name and the corresponding discount amount
+5. The calculate_cost function computes the total amount for a product, applies discounts using the apply_discount function, and calculates additional fees.
+6. It returns a dictionary containing detailed information about the product, including the product name, quantity, total amount, subtotal, applied discount, discount amount, gift wrap fee, shipping fee, and total cost.
+7. The main function serves as the entry point of the program.
+8. It defines a product catalog with prices and an empty cart to store order details.
+9. It iterates through each product, prompting the user to input the quantity and whether the product is wrapped as a gift.
+10. For each product, it calculates the cost using the calculate_cost function and adds the details to the cart.
+11. After processing all products, it displays an order summary, including details for each product.
+12. inally, it calculates and prints the total order cost.
+
+EXPLAINATION OF THE PYTHON CODE-
+1.The apply_discount function takes three parameters: cart_total (total cost of items in the cart), cart_quantity (total quantity of items in the cart), and product_quantity (quantity of a specific product).
+2.It defines a list of discount rules, each represented as a tuple with a discount name and percentage. The rules are applied conditionally based on the values of cart_total, product_quantity, and cart_quantity.
+3.The function filters out None values from the list of discounts and then selects the discount with the highest percentage (most beneficial).
+4.Returns the applied discount name and the corresponding discount amount
+5.The calculate_cost function computes the total amount for a product, applies discounts using the apply_discount function, and calculates additional fees.
+6.It returns a dictionary containing detailed information about the product, including the product name, quantity, total amount, subtotal, applied discount, discount amount, gift wrap fee, shipping fee, and total cost
+7.The main function serves as the entry point of the program.
+8.It defines a product catalog with prices and an empty cart to store order details.
+9.It iterates through each product, prompting the user to input the quantity and whether the product is wrapped as a gift.
+10.For each product, it calculates the cost using the calculate_cost function and adds the details to the cart.
+11.After processing all products, it displays an order summary, including details for each product.
+12.Finally, it calculates and prints the total order cost
+
+
+

@@ -1,0 +1,39 @@
+1.Why do you like to join as a Software developer?
+As a fresher, I am eager to join as a software developer because it offers an exciting opportunity to apply my programming skills, contribute to innovative projects, and continually learn in a dynamic field. I'm drawn to the prospect of solving real-world problems, collaborating with teams, and making a positive impact through technology.
+
+
+2.List top 3 softwares / tools that inspire you. Why do these tools inspire you?
+I'm inspired by tools like Visual Studio Code for its simplicity and powerful features, GitHub for collaborative coding experiences, and Python for its versatility. These tools foster a dynamic environment, making coding accessible and enjoyable for a fresher like me, fueling my passion for software development.
+These resources create an engaging environment, making coding delightful and accessible for a fresher like me, further igniting my enthusiasm for software development.
+
+
+
+3.List top 3 organisations you like to join in your career & why you like these organisations
+ IBM:
+Why: IBM is a global technology and consulting company known for its history of innovation. Joining IBM offers exposure to diverse projects, a commitment to research, and a collaborative culture focused on solving complex challenges
+
+Atlassian:
+Why: Atlassian is a software company specializing in collaboration tools like Jira and Bitbucket. Joining Atlassian provides the opportunity to contribute to tools that enhance team productivity, work in an agile environment, and be part of a company that values innovation in software development.
+
+ Tesla:
+Why: Tesla, led by Elon Musk, is at the forefront of electric vehicles and renewable energy. Joining Tesla provides an opportunity to work on transformative technologies with a focus on sustainability and the future of transportation.
+
+
+
+4.How you position yourself in this industry after 2 years?
+In two years, I aim to position myself as a proficient and adaptable software developer. By consistently learning, contributing to real-world projects, and embracing challenges, I aspire to build a strong foundation for a successful and fulfilling career in the dynamic field of software development
+
+
+5.List 3 projects / products you have built or have planned to build in the upcoming year, also explain your role in the same.
+Cafeteria Management System:
+Role: In this project, I designed and implemented a comprehensive cafeteria management system. My responsibilities included defining system requirements, developing user interfaces, and integrating features such as menu management, order processing, and payment tracking.
+
+WhatsApp Chat Analyzer:
+Role: I conceptualized and implemented a WhatsApp chat analyzer to extract insights from chat data. Responsibilities involved data preprocessing, sentiment analysis, and visualization. The goal was to provide users with a tool to understand communication patterns and sentiment trends in their WhatsApp conversations.
+
+Stock Market Predictor:
+Role: In the stock market predictor project, I took on the role of a data scientist. I gathered historical stock data, performed data analysis, and implemented predictive models using machine learning techniques. The aim was to build a tool that forecasts stock prices based on historical trends, indicators, and relevant market data
+
+
+
+
